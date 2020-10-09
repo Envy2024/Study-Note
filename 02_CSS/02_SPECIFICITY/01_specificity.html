@@ -1,0 +1,85 @@
+<!-- 
+  CSS Specificity(CSS 명시도 - 우선순위)
+
+  * CSS (Cascading Style Sheet): 흐르듯이 적용되는 스타일 시트.
+  
+  1. 동급(같은) 선택자: 아래에 작성한 것이 우선도가 높다.
+
+  2. 
+
+-->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 1. 동급(같은) 선택자는 가장 아래에 적힌 스타일이
+    적용된다.
+    이 때는 p가 color red로 지정된다. */
+    /* ------------------- 
+    p {
+      color: blue;
+    }
+
+    p {
+      color: red;
+    } 
+    ------------------- */
+
+    /* 2. 다음은 좀 더 구체적으로 적용시켰으므로,
+    .area p의 내용이 적용된다. */
+    .area p {
+      color: blue;
+    }
+
+    p {
+      color: red;
+    }
+
+    /* 이러한 명시도를 점수로 따진다면
+      All Selector(*) = 0
+      Tag Selector = 1
+      Class Selector = 10
+      ID Selector = 100
+
+      위의 점수는
+      11(.area p) vs 1(p) 이므로
+      .area p 가 적용되게 된 것.
+     */
+
+    /* inline-style을 이길 수 있는 코드가 있다.
+        바로 !important인데, inline-style처럼 명시도 점수가 높은 것만
+        펑펑 쓰면 수정하기 굉장히 까다로워진다.
+
+        따라서, !important는 최후의 최후의 최후수단으로 쓰도록 하자
+      */
+    #text2 {
+      color: red !important;
+    }
+
+    /*  */
+  </style>
+</head>
+
+<body>
+  <div class="area">
+    <p id="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex dolores eveniet, iure ipsa nemo nesciunt
+      eos voluptatum voluptas. Quae iste ipsum, maxime blanditiis sit ea aspernatur expedita nam illum.
+      Voluptatem.Expedita numquam cumque aliquid placeat hic quos animi voluptatum tempore, ad, rerum enim consectetur
+      earum cupiditate perspiciatis quis consequuntur eius, a voluptatem omnis. Deleniti debitis, autem dignissimos
+      magnam error at?</p>
+
+    <!-- 이렇게 inline style을 지정하면 ID 선택자보다 더 큰 명시도 점수(1000)를 갖게 된다. 이렇게 inline-style을 쓰는 것은 좋지 않은 행위이다. -->
+    <p id="text2" style="color: blueviolet">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex dolores
+      eveniet, iure ipsa nemo nesciunt
+      eos voluptatum voluptas. Quae iste ipsum, maxime blanditiis sit ea aspernatur expedita nam illum.
+      Voluptatem.Expedita numquam cumque aliquid placeat hic quos animi voluptatum tempore, ad, rerum enim consectetur
+      earum cupiditate perspiciatis quis consequuntur eius, a voluptatem omnis. Deleniti debitis, autem dignissimos
+      magnam error at?</p>
+  </div>
+</body>
+
+</html>
