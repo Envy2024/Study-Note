@@ -1,0 +1,19 @@
+css/
+  css selector
+  font
+  text-style
+  background - gradient
+  box-model
+  display
+  position
+  float - columns
+  transform
+  flex
+  grid
+  responsive
+  bootstrap
+  transition
+  animation
+  LESS/SASS/SCSS
+  SVG
+  **etc(practice)
