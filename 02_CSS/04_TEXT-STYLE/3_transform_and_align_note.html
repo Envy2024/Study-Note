@@ -1,0 +1,90 @@
+<!-- 
+  CSS Text Style: transform & align
+
+  1. 텍스트 변형
+  text-transform :
+    - uppercase: 전부 대문자로
+    - lowercase: 전부 소문자로
+    - capitalize: 맨 앞글자만 대문자로
+
+  font-variant:
+    - small-caps: 전부 대문자로 하되 맨 앞글자를 제외하고 사이즈를 작게 한다.
+
+
+  2. 수직 정렬
+    인라인 요소끼리 있을 때 특히 뒤에 따라오는 인라인 요소의 위아래 정렬을 맞추기 위해 사용한다.
+
+    vertical-align: 
+      - baseline: 글자의 baseline 위치에 맞춤 (baseline___)
+      - sub: 부모 요소의 아래 첨자 위치에
+      - super: 부모요소의 위 첨자 위치에
+      - top: 부모요소의 상단에 맞춤
+      - text-top: 부모요소의 글꼴 요소 상단 위치에 맞춤
+      - middle: 소문자를 기준으로 중간에 맞춤
+      - bottom: 부모요소의 아래쪽에 맞춤
+      - text-bottom: 글꼴의 아래쪽에 맞춤
+
+      * 백분율(%)을 지정가능하고, 길이값을 적용할 수 있다.
+
+    ** 참고쪽을 보면 h1 태그 내부에 img태그를 넣었으나, 알 수 없는 여백이 하단에 존재한다.
+    이 때 vertical-align: top을 넣어주면 그러한 공백이 사라지게 된다.
+
+-->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .uppercase {
+      text-transform: uppercase;
+    }
+
+    .lowercase {
+      text-transform: lowercase;
+    }
+
+    .capitalize {
+      text-transform: capitalize;
+    }
+
+    .smallcaps {
+      font-variant: small-caps;
+    }
+
+    h1 {
+      border: 1px solid;
+      word-break: all;
+      /* text-align: justify는 양쪽 정렬로, word-break와 함께 써야 단어가 끊겨 생기는
+      물줄기 현상을 막을 수 있다. */
+    }
+
+    img {
+      border: 1px solid black;
+    }
+
+    .remove-bottom-padding {
+      vertical-align: top;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="area">
+    <h1 class="uppercase">Lorem Ipsum Dolor.</h1>
+    <h1 class="lowercase">Lorem Ipsum Dolor.</h1>
+    <h1 class="capitalize">lorem ipsum dolor.</h1>
+    <h1 class="smallcaps">Lorem Ipsum Dolor.</h1>
+  </div>
+
+  <h1>
+    <img src="img/PlaceSensor1.jpg" alt="#">
+  </h1>
+  <h1>
+    <img class="remove-bottom-padding" src="img/PlaceSensor1.jpg" alt="#">
+  </h1>
+</body>
+
+</html>
