@@ -1,0 +1,75 @@
+<!-- 
+  CSS - Background
+
+  background는 색상, 이미지, 원점, 크기, 반복 등 여러 배경 스타일을 한 번에 지정합니다.
+
+    background-attachment: 속성은 배경 이미지를 뷰포트 내에서 고정할지, 아니면 자신의 컨테이닝 블록과 함께 스크롤할지 지정합니다.
+
+    background-clip:요소의 배경이 테두리, 안쪽 여백, 콘텐츠 상자 중 어디까지 차지할 지 지정합니다.
+
+    background-color: 요소의 배경 색을 지정합니다.
+
+    background-image: 요소의 배경 이미지를 한 개나 여러 개 지정합니다.
+
+    background-origin:  배경의 원점을 테두리 시작점, 테두리 내부, 안쪽 여백 내부 중 하나로 지정합니다.
+      - border-box: 배경을 테두리 박스에 상대적으로 배치합니다.
+      - padding-box: 배경을 안쪽 여백 박스에 상대적으로 배치합니다.
+      - content-box: 배경을 콘텐츠 박스에 상대적으로 배치합니다.
+
+    background-position: 각 배경 이미지의 초기 위치를 설정합니다.
+
+    background-repeat: 배경 이미지의 반복 방법을 지정합니다. 가로축 및 세로축을 따라 반복할 수 있고, 아예 반복하지 않을 수도 있습니다.
+
+    background-size: 요소 배경 이미지의 크기를 설정합니다. 그대로 두거나, 늘리고 줄이거나, 공간에 맞출 수 있습니다.
+-->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS - Background</title>
+  <style>
+    .bg {
+      width: 600px;
+      height: 600px;
+      background-image: url(img/background-1487545_1920.jpg);
+      background-repeat: no-repeat;
+      background-position: left top;
+      /* 앞부분이 '가로' 기준, 뒷부분이 '세로 기준' */
+      /* 
+        background-position: top; => background-position: center top
+        background-position: 20px => background-position: 20px center;
+
+        width 기준의 값으로는 'left, center, right' /
+        세로 기준의 값으로는 top, center, bottom
+        %로 지정 시 0, 50%, 100%
+        +---------------------------------------------------+
+        |                         ^ top                     |
+        |                         | 0                       |
+        |                         |                         |
+        |                         |                         |
+        |                         |                         |
+        | left                    | center           right  |
+        |<<-----------------------+----------------------->>|
+        | 0                       | 50%               100%  |
+        |                         |                         |
+        |                         |                         |
+        |                         |                         |
+        |                         | 100%                    |
+        |                         v bottom                  |
+        +---------------------------------------------------+
+        ** %로 값을 지정하면 해당 영역의 %지점에 배경이미지의 %지점이 위치함
+          px 값 지정 시 해당 영역의 px값 위치가 배경이미지의 시작지점
+       */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg">
+
+  </div>
+</body>
+
+</html>

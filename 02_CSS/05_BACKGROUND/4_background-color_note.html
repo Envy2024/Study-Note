@@ -1,0 +1,62 @@
+<!-- 
+  CSS - background
+
+  background-color: 요소의 배경 색을 지정합니다.
+    - 키워드 값: red, indigo, black ...
+    - 16진수 값: #bbff00(불투명) #757070(불투명), #11ffee00(투명), #fff(불투명 단축), #fff0(투명단축)
+    - RGB 값: rgb(255,255,255)(불투명), rgba(255,255,255,0)(투명)
+    - HSL 값: hsl(50, 33%, 25%)(불투명), hsla(50, 33% 25%, 0.75)(75%투명)
+    - 특별 키워드값: currentcolor, transparent,
+    - 전역 값: inherit, initial, unset
+
+  접근성 고려사항
+    낮은 시력을 가진 사용자도 페이지의 콘텐츠를 읽을 수 있도록 글자 색과 배경색의 대비를 높게 유지하는 것이 중요합니다.
+    색상 대비율은 배경색과 투명도를 적용한 글자 색의 밝기를 비교해서 얻어낼 수 있습니다. 현재 웹 콘텐츠 접근성 가이드라인(WCAG)을 만족하려면, 텍스트 콘텐츠는 4.5:1, 제목 등 큰 텍스트는 3:1의 대비율이 필요합니다. 
+    큰 텍스트란 18.66px 이상의 굵은 글씨 혹은 24px 이상의 텍스트로 정의하고 있습니다.
+
+    관련 링크
+    https://webaim.org/resources/contrastchecker/
+    https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG/Perceivable#Guideline_1.4_Make_it_easier_for_users_to_see_and_hear_content_including_separating_foreground_from_background
+    https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS - background-color</title>
+  <style>
+    .exampleone {
+      background-color: teal;
+      color: white;
+    }
+
+    .exampletwo {
+      background-color: rgb(153, 102, 153);
+      color: rgb(255, 255, 204);
+    }
+
+    .examplethree {
+      background-color: #777799;
+      color: #FFFFFF;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="exampleone">
+    Lorem ipsum dolor sit amet, consectetuer
+  </div>
+
+  <div class="exampletwo">
+    Lorem ipsum dolor sit amet, consectetuer
+  </div>
+
+  <div class="examplethree">
+    Lorem ipsum dolor sit amet, consectetuer
+  </div>
+</body>
+
+</html>

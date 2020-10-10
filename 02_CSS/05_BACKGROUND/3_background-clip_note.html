@@ -1,0 +1,59 @@
+<!-- 
+  CSS - Background
+
+  background-clip
+    - border-box: 배경이 테두리의 바깥 경계까지 차지합니다. (Z축 순서 상 테두리 아래 위치)
+
+    - padding-box: 배경이 안쪽 여백의 바깥 경계까지 차지합니다. 테두리 밑에는 배경을 그리지 않습니다.
+
+    - content-box: 배경을 콘텐츠 상자에 맞춰 그립니다.
+
+    - text: 배경을 전경 텍스트 위에만 그립니다.
+    // This is an experimental API that should not be used in production code
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS - background-clip</title>
+  <style>
+    p {
+      border: .8em darkviolet;
+      border-style: dotted double;
+      margin: 1em 0;
+      padding: 1.4em;
+      background: linear-gradient(60deg, red, yellow, red, yellow, red);
+      font: 900 1.2em sans-serif;
+      text-decoration: underline;
+    }
+
+    .border-box {
+      background-clip: border-box;
+    }
+
+    .padding-box {
+      background-clip: padding-box;
+    }
+
+    .content-box {
+      background-clip: content-box;
+    }
+
+    .text {
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: rgba(0, 0, 0, .2);
+    }
+  </style>
+</head>
+
+<body>
+  <p class="border-box">The background extends behind the border.</p>
+  <p class="padding-box">The background extends to the inside edge of the border.</p>
+  <p class="content-box">The background extends only to the edge of the content box.</p>
+  <p class="text">The background is clipped to the foreground text.</p>
+</body>
+
+</html>
