@@ -1,0 +1,144 @@
+<!-- 
+  CSS - Text Style 1
+  [ 텍스트 스타일 : 크기 | 굵기 | 모양 | 장식 | 정렬 ]
+  1. 텍스트 크기
+    폰트 크기는 키워드나 pixel과 em처럼 수치 단위처럼 여러가지 방법으로 지정할 수 있습니다. 
+    각 웹 페이지에 맞는 적합한 방법을 선택해야 합니다.
+
+    font-size: xx-small | x-small | small | medium | large | x-large | xx-large | larger | smaller;
+    다만 위처럼 지정하는 것은 비추천된다. 
+    수치를 정확히 잡기 힘들기 때문..
+
+  2. 텍스트 굵기(기본 normar)
+    font-weight: normal | lighter | bold | bolder...
+    또는 수치로 지정할 수 있다.
+    font-weight: 400(normal)
+    100~900까지(font마다 지원 수치가 다르기 때문에 확인해야함)
+    100~900 의 가중치 값들은 다음의 일반적인 두께 이름으로 대응된다:
+
+    100- Thin (Hairline)
+    200- Extra Light (Ultra Light)
+    300- Light
+    400- Normal
+    500- Medium
+    600- Semi Bold (Demi Bold)
+    700- Bold
+    800- Extra Bold (Ultra Bold)
+    900- Black (Heavy)
+
+  3. 텍스트 장식
+    text-decoration: underline | none | line-through | overline
+    line-through는 텍스트를 관통하는 선이다.
+
+    글씨 장식은 모든 하위 텍스트 요소에 적용됩니다. 따라서 자식 요소는 부모가 적용한 장식을 제거할 수 없습니다. 
+    예를 들어 <p>이 문단에 <em>강조 표시</em>가 있어요.</p> 마크업에 p { text-decoration: underline; } 스타일을 적용하면 전체 문단에 밑줄이 쳐집니다. 
+    em { text-decoration: none; }을 추가하더라도 아무 변화도 일어나지 않습니다. 다만 em { text-decoration: overline; } 스타일은 "강조 표시"가 윗줄과 밑줄 모두 갖게 합니다.
+
+    text-decoration Properties = 
+      text-decoration-line: underline, line-through 등 장식의 종류.
+      text-decoration-style: solid, wavy, dashed 등 장식의 스타일.(IE지원안함)
+      text-decoration-color: 장식의 색.(IE지원안함)
+      text-decoration-thickness: 요소를 꾸미는데 사용되는 선의 두께를 설정합니다.(대부분 지원안됨)
+
+      ex) text-decoration: underline dashed purple 4px;
+
+
+  4. 텍스트 모양
+    font-style: normal | italic == oblique ...
+    // italic - 비스듬하게
+    // oblicque - 기울이다
+
+  5. 텍스트 정렬
+    text-align: left | right| center ...
+    inline 요소도 text-align속성으로 부모 요소에 left|right|center 정렬시킬 수 있다.
+-->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS - Text Style 1</title>
+  <style>
+    body {
+      font-family: '돋움', dotum, helvetica, sans-serif;
+      font-size: 12px;
+    }
+
+    h1 {
+      /* body-12px로 인한 기본 24px */
+
+      /* 텍스트 크기 */
+      font-size: medium;
+      /* medium 시 16px */
+
+      /* 텍스트 굵기 */
+      font-weight: 700;
+      /* font-weight: bold와 같음 */
+
+      /* 텍스트 장식 */
+      text-decoration: overline;
+
+    }
+
+    em,
+    address {
+      /* 텍스트 모양 */
+      font-style: normal;
+    }
+
+    del {
+      font-style: italic;
+    }
+
+    .left {
+      text-align: left;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .right {
+      text-align: right;
+    }
+
+    .etc {
+      /* 상위 요소가 블럭요소이라면, 상위 요소의 공간 내에서 inline요소가 정렬된다. */
+      display: block;
+      text-align: right;
+    }
+
+    .thick {
+      text-decoration: solid underline purple;
+      text-decoration-thickness: 4px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="area">
+    <h1>글자의 정렬</h1>
+    <del>1,000,000원</del>
+    <p class="left"><em>Lorem ipsum dolor</em> sit, amet consectetur adipisicing elit. Exercitationem autem corrupti aut
+      repellat
+    </p>
+    <p class="center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem autem corrupti aut
+    </p>
+    <p class="right">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem autem corrupti aut
+    </p>
+
+    <address>
+      &copy; all right reserved.<br>
+      contact us.
+    </address>
+    <span class="etc">
+      <span>line elem</span>
+      <span>line elem</span>
+      <span>line elem</span>
+    </span>
+  </div>
+  <p class="thick">asdfasdfsadfsadfd</p>
+</body>
+
+</html>
