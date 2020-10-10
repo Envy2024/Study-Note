@@ -1,0 +1,69 @@
+<!-- 
+  CSS Text-Style: spacing(간격)
+
+  1. letter-spacing: 글자 간격
+    - 포토샵에서 tracking 1000은 1em이다. 120은 0.12em이라는 뜻.
+
+  2. word-spacing: 단어 간격
+
+  3. line-height: 줄 간격
+-->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS - spacing</title>
+  <style>
+    h1 {
+      letter-spacing: 1em;
+    }
+
+    p.left {
+      word-spacing: 2em;
+    }
+
+    p.center {
+      line-height: 40px;
+    }
+
+    h2 {
+      width: 300px;
+      border: 1px solid red;
+      height: 60px;
+      text-align: center;
+      /* line-height로 글자 가운데 배치가 가능해진다. */
+      line-height: 60px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="area">
+    <h1>글자의 정렬</h1>
+    <h2>line height</h2>
+    <del>1,000,000원</del>
+    <p class="left"><em>Lorem ipsum</em> dolor sit amet consectetur, adipisicing elit. Soluta quaerat reprehenderit
+      quidem autem
+      modi exercitationem quibusdam, quas aspernatur quos error explicabo blanditiis minima deserunt molestiae
+      laboriosam at a neque tempore.Tempora, cumque! Hic, harum ratione maxime asperiores saepe nihil sapiente ab
+      veritatis non a velit eaque, eveniet perferendis dolore architecto ullam ducimus vel fuga repudiandae? Officiis
+      nam excepturi totam voluptas?</p>
+
+
+    <p class="center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam modi officia voluptates neque
+      possimus tenetur maiores hic? Ad corporis at doloribus repellendus magnam deserunt facere eligendi quos, ducimus
+      veritatis minima.Necessitatibus nam delectus maxime, recusandae nihil quae temporibus minima incidunt. Nam dolore
+      deleniti animi saepe atque quisquam accusamus sed unde quae, esse, ducimus soluta exercitationem error explicabo
+      adipisci nesciunt itaque.</p>
+
+    <p class="right">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam modi officia voluptates neque
+      possimus tenetur maiores hic? Ad corporis at doloribus repellendus magnam deserunt facere eligendi quos, ducimus
+      veritatis minima.Necessitatibus nam delectus maxime, recusandae nihil quae temporibus minima incidunt. Nam dolore
+      deleniti animi saepe atque quisquam accusamus sed unde quae, esse, ducimus soluta exercitationem error explicabo
+      adipisci nesciunt itaque.</p>
+  </div>
+</body>
+
+</html>
