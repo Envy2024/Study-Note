@@ -1,7 +1,7 @@
 css/
   css selector (v)
   specificity (v)
-  font ()
+  font (v)
   text-style
   background - gradient
   box-model
