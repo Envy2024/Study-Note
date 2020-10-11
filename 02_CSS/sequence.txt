@@ -3,7 +3,7 @@ css/
   specificity (v)
   font (v)
   text-style (v)
-  background - gradient
+  background - gradient (v)
   box-model
   display
   position
