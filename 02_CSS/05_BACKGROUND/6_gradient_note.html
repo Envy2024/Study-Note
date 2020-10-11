@@ -1,0 +1,105 @@
+<!-- 
+  cSS - background(gradient)
+
+  gradient: 여러 색의 점진적인 변화를 나타냅니다.
+
+  1) 선형 gradient: 가상의 선을 따라 여러 색 사이를 전이합니다.
+  linear-gradient(방향, 색상 위치, 색상위치, ....);
+    - 방향: 기본값(to bottom)은 생략가능
+    - 시작과 끝값은 있을 시 (색상, 색상)만으로 구성 가능
+    -> linear-gradient(#000, #fff);
+    -> linear-graident(#000, #fff 80%, #aaa);
+
+    ex) linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+
+  2) 원형 gradient: 중심점으로부터 바깥으로 여러 색 사이를 전이합니다
+  radial-gradient(방향, 색상 위치, 색상 위치 ,....);
+
+    ex) radial-gradient(red, yellow, rgb(30, 144, 255)
+
+  3) 반복 gradient: 요소를 꽉 채울 때까지 그레이디언트를 필요한 만큼 반복합니다.
+  repeating-linear-gradient(): linear-graident와 유사 하고 동일한 인수를 취하지만 
+                                전체 컨테이너를 덮기 위해 모든 방향으로 무한정 색상 정지를 반복합니다
+  repeating-radial-gradient(): radial-graident와 유사 하고 동일한 인수를 취하지만 
+                                전체 컨테이너를 덮기 위해 모든 방향으로 무한정 색상 정지를 반복합니다
+
+    ex) repeating-linear-gradient(to top left, lightpink, lightpink 5px, white 5px, white 10px)
+        repeating-radial-gradient(powderblue, powderblue 8px, white 8px, white 16px)
+
+
+  Google: [colorzilar gradient] - gradient 생성 도구
+-->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS - gradient</title>
+  <style>
+    div {
+      width: 300px;
+      height: 300px;
+      border: 1px solid black;
+    }
+
+    .linear {
+      /* linear-gradient(방향, 색상 위치, 색상위치, ....); */
+      background: linear-gradient(to bottom, #000 0%, #fff 100%);
+    }
+
+    .ex1 {
+      background: linear-gradient(to bottom, #2989cc 0%, #fff 50%, #906a00 52%, #d99f00 64%, #fff 100%);
+    }
+
+    .ex2 {
+      /* background: linear-gradient(135deg, #2989cc 0%, #fff 50%, #906a00 52%, #d99f00 64%, #fff 100%); */
+      /* 브라우저마다 각도를 매기는 방식이 특히 구형 브라우저에서 틀림.(까다로움) */
+      /* 따라서, colorzilar를 이용하여 코드를 받아와 붙여넣어야 각 브라우저마다 동일한 화면이 나올 것. */
+      background: linear-gradient(to bottom, #000 0%, #fff 100%);
+    }
+
+    .ex3 {
+      background: linear-gradient(to right, #2989cc 0%, #2989cc 20%, #fff 20%, #fff 80%, #2989cc 80%, #2989cc 100%);
+    }
+
+    .radial {
+      background: radial-gradient(ellipse at center, #000 0%, #fff 100%);
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Gradient</h1>
+
+  <h2>Linear gradient</h2>
+
+  <div class="linear">
+    Linear
+  </div>
+
+  <h2>ex1</h2>
+  <div class="ex1">
+    Linear
+  </div>
+
+  <h2>ex2</h2>
+  <div class="ex2">
+    Linear
+  </div>
+
+  <h2>ex3</h2>
+  <div class="ex3">
+    Linear
+  </div>
+
+  <hr>
+
+  <h2>Radial gradient</h2>
+
+  <div class="radial">
+    radial
+  </div>
+</body>
+
+</html>
