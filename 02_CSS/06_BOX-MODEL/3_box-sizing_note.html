@@ -1,0 +1,56 @@
+<!-- 
+  CSS - Box model
+
+  box-sizing
+-->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS - box-sizing</title>
+  <style>
+    p {
+      margin: 100px auto;
+      width: 500px;
+      border: 3px solid;
+      padding: 20px;
+      box-sizing: content-box;
+    }
+
+    .border-box {
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>content-box</h2>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione amet laborum quo eum quos, sunt sint. Iste
+    perspiciatis animi tempore impedit excepturi ea nam placeat, enim, similique non asperiores fuga.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam molestias exercitationem enim facere nam adipisci,
+    neque quod alias ipsa. Eius rem commodi possimus alias, dolores debitis quam vitae cupiditate mollitia.
+  </p>
+  <!-- 위의 p 요소엔 분명 width: 500px의 값을 주었으나 확인해보면
+    546px의 크기를 갖는 것을 확인할 수 있다.
+
+    그 이유는 box-sizing에 있는데, 
+    현재 content에 500px이 주어져있고, content의 사방으로 20px의 패딩이 들어가고, border가 들어갔기 때문이다.
+    box-sizing: content-box;으로 기본 설정되어있기 때문이다.
+
+    이를 수정하기 위해선
+    box-sizing: border-box;를 주면 된다.
+  -->
+  <h2>border-box</h2>
+  <p class="border-box">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione amet laborum quo eum quos, sunt sint. Iste
+    perspiciatis animi tempore impedit excepturi ea nam placeat, enim, similique non asperiores fuga.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam molestias exercitationem enim facere nam adipisci,
+    neque quod alias ipsa. Eius rem commodi possimus alias, dolores debitis quam vitae cupiditate mollitia.
+  </p>
+  <!-- 위 border-box가 적용된 p 태그는 width값이 확실히 500px로 적용되어 있는 것을 확인할 수 있다. -->
+</body>
+
+</html>
