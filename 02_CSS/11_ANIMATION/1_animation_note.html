@@ -1,0 +1,93 @@
+<!-- 
+  별다른 조작없이 페이지 로드시 작동하는 것은 애니메이션
+  조작하여 바뀌는 것은 Transition이다.
+
+  물론 animation으로도 전부 가능하긴 하다.
+-->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animation</title>
+  <style>
+    body {
+      font-family: tahoma, sans-serif;
+      font-size: 12px;
+    }
+
+    /* .photo:hover {
+      animation-name: change_color;
+      animation-duration: 2s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in;
+    } */
+
+    .photo {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      animation-name: change_color;
+      animation-duration: 2s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in;
+      /* animation은 반드시 animation-name을 따로 지정해줘야 한다. 
+        @keyframes ~~~
+        animation-duration: 애니메이션 진행 시간
+        animation-fill-mode:
+          ex) fowrards : 진행방향에서 멈춤
+        animation-timing-function: 애니메이션 타이밍 패턴
+          ex) ease-in
+      */
+      /* transition에 없는 animation만의 기능! 
+
+        animation-iteration-count: 3;
+        애니메이션의 동작 횟수!이다.
+        3번 반복한다는 뜻
+
+        이런식으로 순서에 따라 변형을 줄 수도,
+        방향을 줄 수 있다(animation-direction: normal | reverse | alternate(순으로가다가 역으로)
+        @keyframes change_color{
+          0% {...}
+          25% {...; margin: 0 0 0 200px;}
+          30% {... margin: 200px 0 0 200px;}
+          50% {...; margin: 200px 0 0 200px;}
+          100% {...; margin: 0 0 200px;}
+        }
+      
+      */
+
+      /* 축약형으로 할 시 다음 순서를 반드시 지켜야 합니다.
+      animation: name duration(s) delay(s) iteration-count timing-function fill-mode direction */
+
+    }
+
+    /*  */
+    @keyframes change_color {
+
+      /* from: 시작 / to: 종료 */
+      from {
+        background-color: red;
+      }
+
+      to {
+        background-color: blue;
+      }
+    }
+
+    /* animation은 별도 설정이 없으면 from 으로 돌아가게 된다. 
+      이것을 막을 필요가 있다.
+      animation-fill-mode:forwards;
+    */
+  </style>
+</head>
+<div class="photo">
+
+</div>
+
+<body>
+
+</body>
+
+</html>

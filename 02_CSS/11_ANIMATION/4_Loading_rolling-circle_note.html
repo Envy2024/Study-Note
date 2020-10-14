@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: skyblue;
+    }
+
+    .wrapper {
+      position: absolute;
+      top: 40%;
+      left: 45%;
+      animation: spin 4s infinite;
+    }
+
+    .spinner {
+      position: relative;
+      width: 6rem;
+      height: 6rem;
+      transform: rotate(135deg);
+    }
+
+    div[class^="curve"] {
+      position: absolute;
+      box-sizing: border-box;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(135deg);
+        opacity: 1;
+      }
+
+      25% {
+        opacity: 0.75;
+      }
+
+      50% {
+        transform: rotate(675deg);
+        opacity: 1;
+      }
+
+      75% {
+        opacity: 0.75;
+      }
+
+      100% {
+        transform: rotate(135deg);
+        opacity: 1;
+      }
+    }
+
+
+    .curve_top_left {
+      width: 3rem;
+      height: 3rem;
+      border-top: 0.5rem solid #fff;
+      border-left: 0.5rem solid #fff;
+      border-top-left-radius: 100%;
+    }
+
+    .curve_top_right {
+      bottom: 50%;
+      left: 50%;
+      width: 2rem;
+      height: 2rem;
+      border-top: 0.5rem solid #fff;
+      border-right: 0.5rem solid #fff;
+      border-top-right-radius: 100%;
+    }
+
+    .curve_bottom_right {
+      width: 3rem;
+      height: 3rem;
+      bottom: 0;
+      right: 0;
+      border-bottom: 0.5rem solid #fff;
+      border-right: 0.5rem solid #fff;
+      border-bottom-right-radius: 100%;
+    }
+
+    .curve_bottom_left {
+      width: 2rem;
+      height: 2rem;
+      right: 50%;
+      top: 50%;
+      border-bottom: 0.5rem solid #fff;
+      border-left: 0.5rem solid #fff;
+      border-bottom-left-radius: 100%;
+    }
+
+
+    .curve_circle {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      width: 1.5rem;
+      height: 1.5rem;
+      background-color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="spinner">
+      <div class="curve_top_left"></div>
+      <div class="curve_bottom_right"></div>
+      <div class="curve_top_right"></div>
+      <div class="curve_bottom_left"></div>
+      <div class="curve_circle"></div>
+    </div>
+  </div>
+</body>
+
+</html>
