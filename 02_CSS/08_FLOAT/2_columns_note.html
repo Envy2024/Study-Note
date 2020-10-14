@@ -1,0 +1,58 @@
+<!-- 
+  CSS - Float
+
+  Columns 
+    - column-width: <length>또는 키워드 로 정의되는 이상적인 열 너비 auto입니다. 
+                    실제 너비는 사용 가능한 공간에 맞게 더 넓거나 좁을 수 있습니다. 
+
+    - column-count: <integer>또는 키워드 로 정의 된 요소의 콘텐츠가 유입되어야하는 이상적인 열 수입니다. 
+                    이 값과 열 너비가 모두 auto이면 허용되는 최대 열 수를 나타냅니다.
+-->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS - Columns</title>
+  <style>
+    .wrapper {
+      width: 600px;
+      margin: 0 auto;
+    }
+
+    .wrapper h1 {
+      column-span: all;
+    }
+
+    .area {
+      column-count: 2;
+      /* 또는
+      column-width: 150px;
+       */
+      column-rule: 2px dotted red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <h1>Multiple columns</h1>
+
+    <p class="area">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit, hic! Aliquid fugiat reprehenderit
+      consectetur
+      perferendis? Veritatis atque dolorem animi molestias deleniti iure molestiae doloribus, numquam ad, adipisci
+      nesciunt, labore quis.
+      Tempora hic aliquid inventore voluptatum voluptatem cupiditate, autem eos nemo explicabo dignissimos facere
+      dolorem.
+      Illum aliquid sint, harum ad doloremque facilis repellat ab corrupti accusantium labore exercitationem quos
+      molestias blanditiis.
+      Velit dolores cupiditate quisquam voluptate eaque nemo ea perferendis, facilis ratione beatae incidunt minus nam
+      iusto obcaecati, magni necessitatibus enim eos commodi illo rem dolorum vero deserunt saepe fugit? Hic?
+      Quos amet exercitationem autem id rerum ad? Quo consequuntur beatae omnis rerum exercitationem totam veniam
+      laudantium nisi ex mollitia reprehenderit hic nemo eaque, sapiente, voluptatem et error incidunt impedit voluptas!
+    </p>
+  </div>
+</body>
+
+</html>
