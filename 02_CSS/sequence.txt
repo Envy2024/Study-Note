@@ -9,8 +9,8 @@ css/
   position (v)
   float - columns (v)
   transform (v)
-  transition
-  animation
+  transition (v)
+  animation (v)
   flex
   grid
   responsive
