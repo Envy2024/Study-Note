@@ -7,7 +7,7 @@ css/
   box-model (v)
   display (v)
   position (v)
-  float - columns ()
+  float - columns (v)
   transform
   flex
   grid
