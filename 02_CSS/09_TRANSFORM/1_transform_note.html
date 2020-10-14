@@ -1,0 +1,88 @@
+<!-- 
+  CSS - Transform
+  
+  transform: 요소에 회전, 크기 조절, 기울이기, 이동 효과를 부여할 수 있습니다. 
+            transform은 CSS 시각적 서식 모델의 좌표 공간을 변경합니다.
+  **** 변형 가능한 요소만 transform할 수 있습니다. 즉, CSS 박스 모델이 레이아웃을 결정하는 모든 요소 중 비대체 인라인 박스, 표 열 박스, 표 열 그룹 박스를 제외한 요소에만 적용할 수 있습니다.
+
+      - <transform-function>: 요소에 적용할 하나 이상의 CSS 변형 함수. 변형 함수는 왼쪽에서 오른쪽으로 곱해집니다. 
+                              즉, 요소에 변형을 오른쪽부터 왼쪽으로 하나씩 순서대로 적용하는 것과 같습니다.
+
+          행렬 변환
+            matrix(): 동종 2D 변환 행렬을 설명합니다.
+            matrix3d(): 3D 변환을 4x4 동종 행렬로 설명합니다.
+
+          원근법
+            perspective(): 사용자와 z = 0 평면 사이의 거리를 설정합니다.
+
+          회전
+            rotate(): 2D 평면에서 고정 된 점을 중심으로 요소를 회전합니다.
+            rotate3d(): 3D 공간에서 고정 된 축을 중심으로 요소를 회전합니다.
+            rotateX(): 가로 축을 중심으로 요소를 회전합니다.
+            rotateY(): 수직 축을 중심으로 요소를 회전합니다.
+            rotateZ(): z 축을 중심으로 요소를 회전합니다.
+
+          크기 조정 (크기 조정)
+            scale(): 2D 평면에서 요소의 배율을 조정합니다.
+            scale3d(): 3D 공간에서 요소의 배율을 조정합니다.
+            scaleX(): 요소를 수평으로 확대 또는 축소합니다.
+            scaleY(): 요소를 수직으로 확대 또는 축소합니다.
+            scaleZ(): z 축을 따라 요소의 배율을 조정합니다.
+
+          비뚤어 짐 (왜곡)
+            skew(): 2D 평면에서 요소를 기울입니다.
+            skewX(): 요소를 가로 방향으로 기울입니다.
+            skewY(): 요소를 수직 방향으로 기울입니다.
+
+          이동
+            translate(): 2D 평면에서 요소를 이동합니다.
+            translate3d(): 3D 공간에서 요소를 이동합니다.
+            translateX(): 요소를 수평으로 이동합니다.
+            translateY(): 요소를 수직으로 이동합니다.
+            translateZ(): z 축을 따라 요소를 이동합니다.
+
+      - none: 아무런 변형도 적용하지 않음.
+-->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS - Transform</title>
+  <style>
+    div {
+      perspective: 1000px;
+      /* 다음 코드는 가상 카메라를 0,0 위치에 두개 한다 */
+      perspective-origin: 0 0;
+      /* 
+        가상 카메라가 1000px 떨어진 상태에서 
+        translateZ(100px)로 카메라를 100px 확대!
+
+        만약 가상카메라가 500px 떨어진 상태에서
+        translateZ(100px)을 하면
+        해당 요소는 더욱 크게 확대된다. 
+       */
+    }
+
+    div img {
+      transition: all 0.35s;
+    }
+
+    div:hover img {
+      transform: translateZ(100px);
+      /* 요소와 가상 카메라 사이에 공간이 없기 떄문에 기본 거리를 설정해주어야한다.
+        perspective를 이용해야 한다!
+      */
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <img src="http://placehold.it/300x300" alt="">
+    <span>photo description</span>
+  </div>
+</body>
+
+</html>
