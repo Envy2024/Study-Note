@@ -6,8 +6,8 @@ css/
   background - gradient (v)
   box-model (v)
   display (v)
-  position
-  float - columns
+  position (v)
+  float - columns ()
   transform
   flex
   grid
