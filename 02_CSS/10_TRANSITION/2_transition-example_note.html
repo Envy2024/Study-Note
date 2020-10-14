@@ -1,0 +1,113 @@
+<!-- 
+  menu- sub menu 구현 시
+  submenu transition 예제입니다.
+-->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>transition02</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .mainmenu {
+      text-align: center;
+      /* A2.*/
+      position: relative;
+      /* // A2.*/
+      background: #333;
+      padding-left: 40px;
+    }
+
+    .mainmenu ul {
+      background: #666;
+      position: absolute;
+      /* A2.*/
+      top: -200%;
+      transform: translateX(-25%);
+      transition: top 0.4s;
+      z-index: -1;
+      /* // A2.*/
+      /* A1.*/
+      /* opacity: 0; */
+      /* pointer-events: none; */
+      /* transition: opacity .5s; */
+      /* // A1.*/
+    }
+
+    .mainmenu:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    .mainmenu>li {
+      float: left;
+      padding: 0 30px;
+      list-style: none;
+      text-align: center;
+      line-height: 35px;
+      color: #fff;
+    }
+
+    .mainmenu>li ul li {
+      padding: 0 10px;
+    }
+
+    .mainmenu ul li {
+      white-space: nowrap;
+    }
+
+    /*  */
+    .mainmenu>li:hover ul {
+      top: 100%;
+      /* A1.*/
+      /* opacity: 1; */
+      /* pointer-events: auto; */
+      /* // A1.*/
+    }
+
+    /* Q. 메뉴에 마우스를 올리지 않았음에도 서브메뉴가 나타나는 문제
+      A1. pointer-events를 사용(예제 참조)
+    */
+    /*  */
+  </style>
+</head>
+
+<body>
+  <ul class="mainmenu">
+    <li>About us
+      <ul>
+        <li>ceo greeting</li>
+        <li>history</li>
+        <li>vision</li>
+      </ul>
+    </li>
+    <li>Works
+      <ul>
+        <li>ceo greeting</li>
+        <li>history</li>
+      </ul>
+    </li>
+    <li>Services
+      <ul>
+        <li>ceo greeting</li>
+        <li>history</li>
+      </ul>
+    </li>
+    <li>Location
+      <ul>
+        <li>ceo greeting</li>
+        <li>ceo</li>
+        <li>greeting</li>
+      </ul>
+    </li>
+  </ul>
+</body>
+
+</html>

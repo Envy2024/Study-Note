@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>transition:04</title>
+  <style>
+    ul {
+      list-style: none;
+    }
+
+    label {
+      padding: 5px;
+      background-color: #0f02A2;
+      color: #fff;
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 1;
+    }
+
+    aside {
+      background-color: #444;
+      width: 250px;
+      position: fixed;
+      top: 0;
+      left: -250px;
+      bottom: 0;
+      transition: left .5s;
+    }
+
+    aside h2,
+    a {
+      color: #fff;
+    }
+
+    aside h2 {
+      opacity: 0;
+    }
+
+    #toggle {
+      opacity: 0;
+    }
+
+    #toggle:checked~aside {
+      left: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="checkbox" id="toggle">
+  <label for="toggle">menu</label>
+
+  <aside>
+    <h2>side menu</h2>
+    <ul>
+      <li><a href="#">menu</a></li>
+      <li><a href="#">menu</a></li>
+      <li><a href="#">menu</a></li>
+      <li><a href="#">menu</a></li>
+    </ul>
+  </aside>
+</body>
+
+</html>

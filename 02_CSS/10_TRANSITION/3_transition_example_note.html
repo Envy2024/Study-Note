@@ -1,0 +1,70 @@
+<!-- 
+  마우스 호버 시 이미지 위에 검은색 투명도 80의 배경에
+  흰 색의 타이틀이 가운데 오도록 css를 작성하시오.
+  나타나는 방식은 opactiy를 활용, 전체 시간은 0.5초.
+-->
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    ul {
+      margin: 0 auto;
+      padding: 0;
+      width: 400px;
+    }
+
+    li {
+      position: relative;
+      list-style: none;
+      width: 400px;
+      height: 200px;
+      overflow: hidden;
+    }
+
+    li span {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      display: inline-block;
+      width: 400px;
+      height: 200px;
+      background-color: #000;
+      opacity: 0;
+      transition: all 0.5s;
+      color: #fff;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      line-height: 200px;
+    }
+
+    li:hover span {
+      top: 0;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+
+<body>
+  <ul>
+    <li>
+      <img src="http://placehold.it/400x200" alt="#">
+      <span>title text</span>
+    </li>
+    <li>
+      <img src="http://placehold.it/400x200" alt="#">
+      <span>title text</span>
+    </li>
+    <li>
+      <img src="http://placehold.it/400x200" alt="#">
+      <span>title text</span>
+    </li>
+  </ul>
+</body>
+
+</html>
