@@ -11,9 +11,9 @@ css/
   transform (v)
   transition (v)
   animation (v)
+  responsive (v)
   flex
   grid
-  responsive
   bootstrap
   LESS/SASS/SCSS
   SVG
